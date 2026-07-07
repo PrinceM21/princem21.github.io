@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Prince Mayani — Data Analyst / Data Scientist portfolio. Credit risk modeling, data pipelines, and backtested trading signals.">
+<title>Prince Mayani — Data Analyst / Data Scientist</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">// data analyst &middot; data scientist</p>
+    <h1>Prince Mayani</h1>
+    <p class="tagline">I build models and pipelines that turn messy data into decisions &mdash;
+       and I show my numbers.</p>
+    <p class="meta">
+      <span>Jersey City, NJ</span>
+      <span class="dot">&bull;</span>
+      <span>B.S. Computer Science, New Jersey City University, 2026</span>
+    </p>
+
+    <!-- headline metrics: the 10-second proof -->
+    <div class="metric-strip" aria-label="Key results">
+      <div class="metric">
+        <span class="metric-num">0.83</span>
+        <span class="metric-label">AUC &mdash; credit risk model</span>
+      </div>
+      <div class="metric">
+        <span class="metric-num">0.74</span>
+        <span class="metric-label">recall on defaults</span>
+      </div>
+      <div class="metric">
+        <span class="metric-num">8,000</span>
+        <span class="metric-label">loan records analyzed</span>
+      </div>
+      <div class="metric">
+        <span class="metric-num">5</span>
+        <span class="metric-label">ATS feeds monitored 24/7</span>
+      </div>
+    </div>
+
+    <nav class="hero-links" aria-label="Contact links">
+      <!-- TODO: replace the three placeholder hrefs below -->
+      <a href="mailto:YOUR_EMAIL_HERE" class="btn btn-solid">Email me</a>
+      <a href="YOUR_GITHUB_URL_HERE" class="btn">GitHub</a>
+      <a href="YOUR_LINKEDIN_URL_HERE" class="btn">LinkedIn</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ============ PROJECTS ============ -->
+<section class="section" id="projects">
+  <div class="wrap">
+    <h2><span class="h2-index">01</span> Projects</h2>
+
+    <!-- Project 1: Credit Risk -->
+    <article class="card card-featured">
+      <div class="card-body">
+        <h3>Credit Risk Prediction</h3>
+        <p class="card-stack">Python &middot; pandas &middot; scikit-learn &middot; Power BI</p>
+        <p>Built an end-to-end default-prediction model on an 8,000-record loan
+           dataset: full EDA, feature engineering, then Logistic Regression and
+           Random Forest with class-imbalance handling. Delivered results in a
+           Power BI dashboard.</p>
+        <ul class="fact-list">
+          <li><strong>Recall 0.74</strong> on the default class, <strong>AUC 0.83</strong></li>
+          <li>Borrowers with a prior default default at <strong>21.2%</strong> vs
+              <strong>10.7%</strong> without &mdash; roughly double the risk</li>
+          <li>Debt-to-income bands form a clean monotonic risk staircase (chart &rarr;)</li>
+        </ul>
+      </div>
+      <figure class="card-chart">
+        <figcaption>Default rate by debt-to-income band</figcaption>
+        <svg id="dti-chart" viewBox="0 0 360 200" role="img"
+             aria-label="Bar chart: default rate rises monotonically across four DTI bands, 3.3%, 6.9%, 12.5%, 30.7%">
+          <!-- baseline -->
+          <line x1="8" y1="166" x2="352" y2="166" class="axis"/>
+          <!-- bars scaled to max 30.7% = 130px -->
+          <g class="bar-group">
+            <rect x="14"  y="152" width="70" height="14"  rx="3"/>
+            <rect x="100" y="137" width="70" height="29"  rx="3"/>
+            <rect x="186" y="113" width="70" height="53"  rx="3"/>
+            <rect x="272" y="36"  width="70" height="130" rx="3" class="bar-hot"/>
+          </g>
+          <g class="bar-value">
+            <text x="49"  y="142">3.3%</text>
+            <text x="135" y="127">6.9%</text>
+            <text x="221" y="103">12.5%</text>
+            <text x="307" y="26">30.7%</text>
+          </g>
+          <g class="bar-tick">
+            <text x="49"  y="184">band 1</text>
+            <text x="135" y="184">band 2</text>
+            <text x="221" y="184">band 3</text>
+            <text x="307" y="184">band 4</text>
+          </g>
+          <text x="180" y="199" class="axis-label">&larr; lower DTI &nbsp;&middot;&nbsp; higher DTI &rarr;</text>
+        </svg>
+      </figure>
+    </article>
+
+    <div class="card-row">
+      <!-- Project 2: jobwatch -->
+      <article class="card">
+        <h3>jobwatch</h3>
+        <p class="card-stack">Python &middot; Flask &middot; SQLite &middot; regex</p>
+        <p>Job-monitoring pipeline that watches 5 ATS feeds, screens postings
+           for visa-sponsorship language with regex, dedupes into SQLite, and
+           surfaces matches through a triage system. Built as a multi-user
+           Flask SaaS.</p>
+        <div class="pipeline" aria-label="jobwatch pipeline">
+          <span class="chip">Greenhouse</span>
+          <span class="chip">Lever</span>
+          <span class="chip">Ashby</span>
+          <span class="chip">Arbeitnow</span>
+          <span class="chip">RemoteOK</span>
+          <span class="pipe-arrow">&rarr;</span>
+          <span class="chip chip-step">sponsorship screen</span>
+          <span class="pipe-arrow">&rarr;</span>
+          <span class="chip chip-step">SQLite dedup</span>
+          <span class="pipe-arrow">&rarr;</span>
+          <span class="chip chip-step">triage</span>
+        </div>
+      </article>
+
+      <!-- Project 3: Stock Signal App -->
+      <article class="card">
+        <h3>Stock Signal App</h3>
+        <p class="card-stack">Python &middot; NLP sentiment &middot; technical indicators</p>
+        <p>Signal system for NSE/BSE stocks combining news sentiment with
+           technical indicators. Validated with honest walk-forward
+           backtesting &mdash; no look-ahead &mdash; and every signal is
+           paper-traded automatically with weekly Telegram reports.</p>
+        <div class="pipeline" aria-label="Signal flow">
+          <span class="chip">news sentiment</span>
+          <span class="chip-plus">+</span>
+          <span class="chip">technicals</span>
+          <span class="pipe-arrow">&rarr;</span>
+          <span class="chip chip-step">walk-forward backtest</span>
+          <span class="pipe-arrow">&rarr;</span>
+          <span class="chip chip-step">paper-trade log</span>
+          <span class="pipe-arrow">&rarr;</span>
+          <span class="chip chip-step">weekly Telegram report</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section" id="skills">
+  <div class="wrap">
+    <h2><span class="h2-index">02</span> Skills</h2>
+    <ul class="skills">
+      <li>Python</li>
+      <li>SQL</li>
+      <li>pandas</li>
+      <li>scikit-learn</li>
+      <li>Power BI</li>
+      <li>Flask</li>
+      <li>Git</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <h2><span class="h2-index">03</span> Contact</h2>
+    <p class="contact-line">Open to entry-level Data Analyst / Data Scientist roles.
+       Based in Jersey City, NJ.</p>
+    <div class="contact-links">
+      <!-- TODO: replace the three placeholders below with your real links -->
+      <a href="mailto:YOUR_EMAIL_HERE" class="btn btn-solid">YOUR_EMAIL_HERE</a>
+      <a href="YOUR_LINKEDIN_URL_HERE" class="btn">LinkedIn &nearr;</a>
+      <a href="YOUR_GITHUB_URL_HERE" class="btn">GitHub &nearr;</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Prince Mayani &middot; built with plain HTML/CSS &mdash; no framework, loads fast.</p>
+  </div>
+</footer>
+
+</body>
+</html>
