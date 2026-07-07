@@ -1,151 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Prince Mayani — Data Analyst / Data Scientist portfolio. Credit risk modeling, data pipelines, and backtested trading signals.">
+<meta name="description" content="Prince Mayani — Data Analyst / Data Scientist. Python, SQL, machine learning: credit risk modeling, ETL pipelines, and data-driven applications.">
 <title>Prince Mayani — Data Analyst / Data Scientist</title>
+<script>
+/* set theme before first paint to avoid flash */
+(function () {
+  var t = localStorage.getItem('theme');
+  if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  document.documentElement.dataset.theme = t;
+})();
+</script>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<button id="theme-toggle" aria-label="Switch between dark and light mode" title="Toggle dark / light mode">
+  <span class="toggle-dark">&#9790; dark</span><span class="toggle-light">&#9788; light</span>
+</button>
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
   <div class="wrap">
     <p class="eyebrow">// data analyst &middot; data scientist</p>
     <h1>Prince Mayani</h1>
-    <p class="tagline">I build models and pipelines that turn messy data into decisions &mdash;
-       and I show my numbers.</p>
+    <p class="tagline">CS graduate with hands-on project experience in Python, SQL, and
+       machine learning &mdash; ETL pipelines, relational and NoSQL databases, and
+       data-driven applications.</p>
     <p class="meta">
       <span>Jersey City, NJ</span>
       <span class="dot">&bull;</span>
-      <span>B.S. Computer Science, New Jersey City University, 2026</span>
+      <a href="mailto:prince16mayani@gmail.com">prince16mayani@gmail.com</a>
+      <span class="dot">&bull;</span>
+      <a href="https://linkedin.com/in/princemayani">linkedin.com/in/princemayani</a>
+      <span class="dot">&bull;</span>
+      <a href="https://github.com/princemayani">github.com/princemayani</a>
     </p>
 
-    <!-- headline metrics: the 10-second proof -->
+    <!-- KPI strip: the 10-second proof -->
     <div class="metric-strip" aria-label="Key results">
       <div class="metric">
-        <span class="metric-num">0.83</span>
+        <span class="metric-num" data-count="8000" data-fmt="comma">8,000</span>
+        <span class="metric-label">records modeled</span>
+      </div>
+      <div class="metric">
+        <span class="metric-num metric-hot" data-count="0.83" data-dec="2">0.83</span>
         <span class="metric-label">AUC &mdash; credit risk model</span>
       </div>
       <div class="metric">
-        <span class="metric-num">0.74</span>
-        <span class="metric-label">recall on defaults</span>
+        <span class="metric-num" data-count="500" data-suffix="K+">500K+</span>
+        <span class="metric-label">records via API</span>
       </div>
       <div class="metric">
-        <span class="metric-num">8,000</span>
-        <span class="metric-label">loan records analyzed</span>
-      </div>
-      <div class="metric">
-        <span class="metric-num">5</span>
-        <span class="metric-label">ATS feeds monitored 24/7</span>
+        <span class="metric-num" data-count="4">4</span>
+        <span class="metric-label">shipped projects</span>
       </div>
     </div>
 
-    <nav class="hero-links" aria-label="Contact links">
-      <!-- TODO: replace the three placeholder hrefs below -->
-      <a href="mailto:YOUR_EMAIL_HERE" class="btn btn-solid">Email me</a>
-      <a href="YOUR_GITHUB_URL_HERE" class="btn">GitHub</a>
-      <a href="YOUR_LINKEDIN_URL_HERE" class="btn">LinkedIn</a>
+    <nav class="hero-links" aria-label="Primary actions">
+      <a href="PrinceMayani_Resume.pdf" download class="btn btn-solid">&darr; Download Resume (PDF)</a>
+      <a href="#projects" class="btn">View projects</a>
     </nav>
   </div>
 </header>
 
 <main>
+<!-- ============ SQL SIGNATURE ============ -->
+<section class="section section-sql" aria-label="SQL query intro">
+  <div class="wrap">
+    <div class="sql-block">
+      <pre class="sql-query"><code><span class="kw">SELECT</span> * <span class="kw">FROM</span> candidates
+<span class="kw">WHERE</span> skills <span class="kw">IN</span> (<span class="str">'Python'</span>, <span class="str">'SQL'</span>, <span class="str">'ML'</span>)
+  <span class="kw">AND</span> available = <span class="kw">TRUE</span>;</code></pre>
+      <p class="sql-status">&#10003; 1 row returned</p>
+      <div class="sql-result">
+        <div class="sql-row">
+          <div><span class="sql-col">name</span>Prince Mayani</div>
+          <div><span class="sql-col">role</span>Data Analyst / Data Scientist</div>
+          <div><span class="sql-col">location</span>Jersey City, NJ</div>
+          <div><span class="sql-col">available</span><strong class="true-val">TRUE</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PROJECTS ============ -->
 <section class="section" id="projects">
   <div class="wrap">
     <h2><span class="h2-index">01</span> Projects</h2>
 
-    <!-- Project 1: Credit Risk -->
+    <!-- 1. Credit Risk -->
     <article class="card card-featured">
       <div class="card-body">
-        <h3>Credit Risk Prediction</h3>
-        <p class="card-stack">Python &middot; pandas &middot; scikit-learn &middot; Power BI</p>
-        <p>Built an end-to-end default-prediction model on an 8,000-record loan
-           dataset: full EDA, feature engineering, then Logistic Regression and
-           Random Forest with class-imbalance handling. Delivered results in a
-           Power BI dashboard.</p>
+        <h3>Credit Risk / Loan Default Prediction</h3>
+        <p class="card-stack">Python &middot; Pandas &middot; Scikit-learn</p>
+        <p>Logistic Regression and Random Forest on an 8,000-record loan dataset,
+           with class imbalance handled using balanced class weights. EDA identified
+           debt-to-income, income, and interest rate as the strongest default drivers.</p>
         <ul class="fact-list">
-          <li><strong>Recall 0.74</strong> on the default class, <strong>AUC 0.83</strong></li>
-          <li>Borrowers with a prior default default at <strong>21.2%</strong> vs
-              <strong>10.7%</strong> without &mdash; roughly double the risk</li>
-          <li>Debt-to-income bands form a clean monotonic risk staircase (chart &rarr;)</li>
+          <li>Evaluated on recall and ROC-AUC: <strong>recall 0.74</strong>, <strong>AUC 0.83</strong></li>
+          <li>Highest DTI band defaults at <strong>41.6%</strong> vs <strong>3.3%</strong> for the lowest</li>
+          <li>Stakeholder report with underwriting recommendations</li>
         </ul>
       </div>
-      <figure class="card-chart">
+      <figure class="card-chart" id="dti-figure">
         <figcaption>Default rate by debt-to-income band</figcaption>
-        <svg id="dti-chart" viewBox="0 0 360 214" role="img"
-             aria-label="Bar chart: default rate rises monotonically across four DTI bands, 3.3%, 6.9%, 12.5%, 30.7%">
-          <!-- baseline -->
-          <line x1="8" y1="166" x2="352" y2="166" class="axis"/>
-          <!-- bars scaled to max 30.7% = 130px -->
-          <g class="bar-group">
-            <rect x="14"  y="152" width="70" height="14"  rx="3"/>
-            <rect x="100" y="137" width="70" height="29"  rx="3"/>
-            <rect x="186" y="113" width="70" height="53"  rx="3"/>
-            <rect x="272" y="36"  width="70" height="130" rx="3" class="bar-hot"/>
-          </g>
-          <g class="bar-value">
-            <text x="49"  y="142">3.3%</text>
-            <text x="135" y="127">6.9%</text>
-            <text x="221" y="103">12.5%</text>
-            <text x="307" y="26">30.7%</text>
-          </g>
-          <g class="bar-tick">
-            <text x="49"  y="184">band 1</text>
-            <text x="135" y="184">band 2</text>
-            <text x="221" y="184">band 3</text>
-            <text x="307" y="184">band 4</text>
-          </g>
-          <text x="180" y="208" class="axis-label">&larr; lower DTI &nbsp;&middot;&nbsp; higher DTI &rarr;</text>
+        <svg id="dti-chart" viewBox="0 0 360 144" role="img"
+             aria-label="Bar chart: 3.3% of loans default in the lowest DTI band versus 41.6% in the highest">
+          <text class="row-label" x="8" y="20">lowest DTI band</text>
+          <rect class="bar" x="8" y="28" width="20" height="24" rx="3">
+            <title>Lowest DTI band: 3.3% default rate</title>
+          </rect>
+          <text class="bar-value" x="36" y="45">3.3%</text>
+
+          <text class="row-label" x="8" y="78">highest DTI band</text>
+          <rect class="bar bar-hot" x="8" y="86" width="250" height="24" rx="3">
+            <title>Highest DTI band: 41.6% default rate</title>
+          </rect>
+          <text class="bar-value bar-value-hot" x="266" y="103">41.6%</text>
+
+          <text class="annotation" x="8" y="136">&asymp; 12.6&times; the default risk</text>
         </svg>
       </figure>
     </article>
 
     <div class="card-row">
-      <!-- Project 2: jobwatch -->
+      <!-- 2. Grade Management -->
       <article class="card">
-        <h3>jobwatch</h3>
-        <p class="card-stack">Python &middot; Flask &middot; SQLite &middot; regex</p>
-        <p>Job-monitoring pipeline that watches 5 ATS feeds, screens postings
-           for visa-sponsorship language with regex, dedupes into SQLite, and
-           surfaces matches through a triage system. Built as a multi-user
-           Flask SaaS.</p>
-        <div class="pipeline" aria-label="jobwatch pipeline">
-          <span class="chip">Greenhouse</span>
-          <span class="chip">Lever</span>
-          <span class="chip">Ashby</span>
-          <span class="chip">Arbeitnow</span>
-          <span class="chip">RemoteOK</span>
-          <span class="pipe-arrow">&rarr;</span>
-          <span class="chip chip-step">sponsorship screen</span>
-          <span class="pipe-arrow">&rarr;</span>
-          <span class="chip chip-step">SQLite dedup</span>
-          <span class="pipe-arrow">&rarr;</span>
-          <span class="chip chip-step">triage</span>
+        <h3>Student Grade Management System</h3>
+        <p class="card-stack">Python &middot; SQLite &middot; CSV</p>
+        <p>Normalized SQLite schema for 100+ student records with integrity
+           constraints, fed by a full ETL pipeline &mdash; raw CSV in, validated and
+           transformed with exception handling, clean tables out &mdash; plus
+           automated CSV report export.</p>
+        <div class="etl-flow" aria-label="ETL pipeline: extract, validate, transform, load">
+          <span class="etl-step">Extract</span><span class="etl-arrow">&rarr;</span>
+          <span class="etl-step">Validate</span><span class="etl-arrow">&rarr;</span>
+          <span class="etl-step">Transform</span><span class="etl-arrow">&rarr;</span>
+          <span class="etl-step">Load</span>
         </div>
       </article>
 
-      <!-- Project 3: Stock Signal App -->
+      <!-- 3. Course Planner -->
       <article class="card">
-        <h3>Stock Signal App</h3>
-        <p class="card-stack">Python &middot; NLP sentiment &middot; technical indicators</p>
-        <p>Signal system for NSE/BSE stocks combining news sentiment with
-           technical indicators. Validated with honest walk-forward
-           backtesting &mdash; no look-ahead &mdash; and every signal is
-           paper-traded automatically with weekly Telegram reports.</p>
-        <div class="pipeline" aria-label="Signal flow">
-          <span class="chip">news sentiment</span>
-          <span class="chip-plus">+</span>
-          <span class="chip">technicals</span>
-          <span class="pipe-arrow">&rarr;</span>
-          <span class="chip chip-step">walk-forward backtest</span>
-          <span class="pipe-arrow">&rarr;</span>
-          <span class="chip chip-step">paper-trade log</span>
-          <span class="pipe-arrow">&rarr;</span>
-          <span class="chip chip-step">weekly Telegram report</span>
+        <h3>Smart Course Planner Web App</h3>
+        <p class="card-stack">Python &middot; Flask &middot; MongoDB</p>
+        <p>NoSQL data model for prerequisites across a 50+ course catalog.
+           Topological sort validates dependency graphs and blocks invalid
+           schedules, exposed through 5+ RESTful Flask API endpoints.</p>
+        <figure class="dag" aria-hidden="true">
+          <svg viewBox="0 0 300 74">
+            <g class="dag-edges">
+              <line x1="52" y1="37" x2="88"  y2="37"/>
+              <line x1="132" y1="30" x2="168" y2="18"/>
+              <line x1="132" y1="44" x2="168" y2="56"/>
+              <line x1="212" y1="18" x2="248" y2="32"/>
+              <line x1="212" y1="56" x2="248" y2="42"/>
+            </g>
+            <g class="dag-nodes">
+              <rect x="8"   y="25" width="44" height="24" rx="12"/><text x="30"  y="41">101</text>
+              <rect x="88"  y="25" width="44" height="24" rx="12"/><text x="110" y="41">201</text>
+              <rect x="168" y="6"  width="44" height="24" rx="12"/><text x="190" y="22">301</text>
+              <rect x="168" y="44" width="44" height="24" rx="12"/><text x="190" y="60">302</text>
+              <rect x="248" y="25" width="44" height="24" rx="12"/><text x="270" y="41">401</text>
+            </g>
+          </svg>
+          <figcaption>prerequisite graph &mdash; resolved by topological sort</figcaption>
+        </figure>
+      </article>
+
+      <!-- 4. Movie Search -->
+      <article class="card">
+        <h3>Movie Search &amp; Analytics App</h3>
+        <p class="card-stack">JavaScript &middot; TMDB API &middot; REST</p>
+        <p>TMDB REST API integration over a 500,000+ movie catalog with search,
+           filter, and aggregation features. Non-blocking fetching with
+           async/await and graceful error handling.</p>
+        <div class="movie-demo">
+          <label for="movie-search" class="demo-label">live demo &mdash; filters a 12-movie sample, same logic as the app</label>
+          <input type="search" id="movie-search" placeholder="Try &quot;inter&quot; or &quot;2019&quot;&hellip;" autocomplete="off">
+          <p class="demo-count" id="movie-count">12 of 12 movies</p>
+          <ul class="movie-list" id="movie-list"></ul>
         </div>
+      </article>
+
+      <!-- filler card keeps the 2-col grid balanced on desktop -->
+      <article class="card card-ghost" aria-hidden="true">
+        <p class="ghost-note">SELECT next_project FROM ideas ORDER BY impact DESC LIMIT 1;</p>
       </article>
     </div>
   </div>
@@ -155,29 +199,67 @@
 <section class="section" id="skills">
   <div class="wrap">
     <h2><span class="h2-index">02</span> Skills</h2>
-    <ul class="skills">
-      <li>Python</li>
-      <li>SQL</li>
-      <li>pandas</li>
-      <li>scikit-learn</li>
-      <li>Power BI</li>
-      <li>Flask</li>
-      <li>Git</li>
-    </ul>
+    <dl class="skill-groups">
+      <div class="skill-group">
+        <dt>Languages</dt>
+        <dd><span>Python</span><span>SQL</span><span>JavaScript</span><span>C</span></dd>
+      </div>
+      <div class="skill-group">
+        <dt>Data &amp; Analytics</dt>
+        <dd><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span><span>Scikit-learn</span><span>Jupyter</span><span>EDA</span><span>feature engineering</span><span>statistical modeling</span></dd>
+      </div>
+      <div class="skill-group">
+        <dt>Data Engineering</dt>
+        <dd><span>ETL pipelines</span><span>web scraping (Requests, BeautifulSoup)</span><span>data cleaning &amp; validation</span><span>regex</span></dd>
+      </div>
+      <div class="skill-group">
+        <dt>Databases</dt>
+        <dd><span>SQLite</span><span>MongoDB</span><span>SQLAlchemy</span><span>schema design</span><span>normalization</span></dd>
+      </div>
+      <div class="skill-group">
+        <dt>BI &amp; Visualization</dt>
+        <dd><span>Power BI (DAX, dashboard design)</span><span>Matplotlib</span><span>Seaborn</span></dd>
+      </div>
+      <div class="skill-group">
+        <dt>Frameworks &amp; APIs</dt>
+        <dd><span>Flask</span><span>REST API design &amp; integration</span><span>JSON</span></dd>
+      </div>
+      <div class="skill-group">
+        <dt>Tools &amp; Workflow</dt>
+        <dd><span>Git</span><span>GitHub</span><span>VS Code</span><span>Linux</span><span>AI-assisted development (Claude Code)</span></dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section class="section" id="education">
+  <div class="wrap">
+    <h2><span class="h2-index">03</span> Education</h2>
+    <div class="edu-card">
+      <div>
+        <h3>B.S. Computer Science</h3>
+        <p class="edu-school">New Jersey City University</p>
+      </div>
+      <div class="edu-facts">
+        <span class="edu-fact">May 2026</span>
+        <span class="edu-fact">GPA 3.2</span>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ============ CONTACT ============ -->
 <section class="section" id="contact">
   <div class="wrap">
-    <h2><span class="h2-index">03</span> Contact</h2>
+    <h2><span class="h2-index">04</span> Contact</h2>
     <p class="contact-line">Open to entry-level Data Analyst / Data Scientist roles.
        Based in Jersey City, NJ.</p>
     <div class="contact-links">
-      <!-- TODO: replace the three placeholders below with your real links -->
-      <a href="mailto:YOUR_EMAIL_HERE" class="btn btn-solid">YOUR_EMAIL_HERE</a>
-      <a href="YOUR_LINKEDIN_URL_HERE" class="btn">LinkedIn &nearr;</a>
-      <a href="YOUR_GITHUB_URL_HERE" class="btn">GitHub &nearr;</a>
+      <a href="mailto:prince16mayani@gmail.com" class="btn btn-solid">prince16mayani@gmail.com</a>
+      <a href="https://linkedin.com/in/princemayani" class="btn">LinkedIn &nearr;</a>
+      <a href="https://github.com/princemayani" class="btn">GitHub &nearr;</a>
+      <a href="PrinceMayani_Resume.pdf" download class="btn">Resume (PDF) &darr;</a>
     </div>
   </div>
 </section>
@@ -185,9 +267,11 @@
 
 <footer>
   <div class="wrap">
-    <p>Prince Mayani &middot; built with plain HTML/CSS &mdash; no framework, loads fast.</p>
+    <p>Prince Mayani &middot; plain HTML/CSS/JS, no framework &middot;
+       <a href="https://github.com/princemayani">github.com/princemayani</a></p>
   </div>
 </footer>
 
+<script src="script.js" defer></script>
 </body>
 </html>
