@@ -1,273 +1,273 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Prince Mayani — Data Analyst / Data Scientist. Python, SQL, machine learning: credit risk modeling, ETL pipelines, and data-driven applications.">
+<meta name="description" content="Prince Mayani — Data Analyst / Data Scientist. Credit risk modeling, ETL pipelines, and data-driven applications, presented as a dashboard.">
 <title>Prince Mayani — Data Analyst / Data Scientist</title>
-<script>
-/* set theme before first paint to avoid flash */
-(function () {
-  var t = localStorage.getItem('theme');
-  if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-  document.documentElement.dataset.theme = t;
-})();
-</script>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<button id="theme-toggle" aria-label="Switch between dark and light mode" title="Toggle dark / light mode">
-  <span class="toggle-dark">&#9790; dark</span><span class="toggle-light">&#9788; light</span>
-</button>
-
-<!-- ============ HERO ============ -->
-<header class="hero" id="top">
-  <div class="wrap">
-    <p class="eyebrow">// data analyst &middot; data scientist</p>
-    <h1>Prince Mayani</h1>
-    <p class="tagline">CS graduate with hands-on project experience in Python, SQL, and
-       machine learning &mdash; ETL pipelines, relational and NoSQL databases, and
-       data-driven applications.</p>
-    <p class="meta">
-      <span>Jersey City, NJ</span>
-      <span class="dot">&bull;</span>
+<!-- ============ TOP STRIP ============ -->
+<div class="top-strip">
+  <div class="wrap strip-inner">
+    <span class="strip-brand">PM &middot; portfolio</span>
+    <nav class="strip-links" aria-label="Contact links">
       <a href="mailto:prince16mayani@gmail.com">prince16mayani@gmail.com</a>
-      <span class="dot">&bull;</span>
-      <a href="https://linkedin.com/in/princemayani">linkedin.com/in/princemayani</a>
-      <span class="dot">&bull;</span>
-      <a href="https://github.com/princemayani">github.com/princemayani</a>
-    </p>
+      <a href="https://linkedin.com/in/princemayani">LinkedIn</a>
+      <a href="https://github.com/princemayani">GitHub</a>
+      <a href="PrinceMayani_Resume.pdf" download class="strip-btn">Resume PDF &darr;</a>
+    </nav>
+  </div>
+</div>
 
-    <!-- KPI strip: the 10-second proof -->
-    <div class="metric-strip" aria-label="Key results">
-      <div class="metric">
-        <span class="metric-num" data-count="8000" data-fmt="comma">8,000</span>
-        <span class="metric-label">records modeled</span>
+<!-- ============ HERO: NAME + KPI ROW ============ -->
+<header class="hero">
+  <div class="wrap">
+    <h1>Prince Mayani</h1>
+    <p class="role">Data Analyst / Data Scientist &middot; Jersey City, NJ</p>
+
+    <div class="kpi-row" aria-label="Headline metrics">
+      <div class="kpi">
+        <span class="kpi-num">0.83</span>
+        <span class="kpi-label">ROC-AUC &middot; credit risk</span>
       </div>
-      <div class="metric">
-        <span class="metric-num metric-hot" data-count="0.83" data-dec="2">0.83</span>
-        <span class="metric-label">AUC &mdash; credit risk model</span>
+      <div class="kpi">
+        <span class="kpi-num">0.74</span>
+        <span class="kpi-label">recall &middot; default class</span>
       </div>
-      <div class="metric">
-        <span class="metric-num" data-count="500" data-suffix="K+">500K+</span>
-        <span class="metric-label">records via API</span>
+      <div class="kpi">
+        <span class="kpi-num">8,000</span>
+        <span class="kpi-label">loans analyzed</span>
       </div>
-      <div class="metric">
-        <span class="metric-num" data-count="4">4</span>
-        <span class="metric-label">shipped projects</span>
+      <div class="kpi">
+        <span class="kpi-num">500K+</span>
+        <span class="kpi-label">records via API</span>
+      </div>
+      <div class="kpi">
+        <span class="kpi-num">4</span>
+        <span class="kpi-label">projects shipped</span>
       </div>
     </div>
-
-    <nav class="hero-links" aria-label="Primary actions">
-      <a href="PrinceMayani_Resume.pdf" download class="btn btn-solid">&darr; Download Resume (PDF)</a>
-      <a href="#projects" class="btn">View projects</a>
-    </nav>
   </div>
 </header>
 
-<main>
-<!-- ============ SQL SIGNATURE ============ -->
-<section class="section section-sql" aria-label="SQL query intro">
-  <div class="wrap">
-    <div class="sql-block">
-      <pre class="sql-query"><code><span class="kw">SELECT</span> * <span class="kw">FROM</span> candidates
-<span class="kw">WHERE</span> skills <span class="kw">IN</span> (<span class="str">'Python'</span>, <span class="str">'SQL'</span>, <span class="str">'ML'</span>)
-  <span class="kw">AND</span> available = <span class="kw">TRUE</span>;</code></pre>
-      <p class="sql-status">&#10003; 1 row returned</p>
-      <div class="sql-result">
-        <div class="sql-row">
-          <div><span class="sql-col">name</span>Prince Mayani</div>
-          <div><span class="sql-col">role</span>Data Analyst / Data Scientist</div>
-          <div><span class="sql-col">location</span>Jersey City, NJ</div>
-          <div><span class="sql-col">available</span><strong class="true-val">TRUE</strong></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<main class="wrap">
 
 <!-- ============ PROJECTS ============ -->
-<section class="section" id="projects">
-  <div class="wrap">
-    <h2><span class="h2-index">01</span> Projects</h2>
+<section id="projects" aria-label="Projects">
+  <div class="section-head">
+    <h2>Projects</h2>
+    <p class="filter-status" id="filter-status" hidden>
+      filtered by <strong id="filter-name"></strong> &middot;
+      <span id="filter-count"></span> &middot;
+      <button type="button" id="filter-clear">clear</button>
+    </p>
+  </div>
 
-    <!-- 1. Credit Risk -->
-    <article class="card card-featured">
-      <div class="card-body">
-        <h3>Credit Risk / Loan Default Prediction</h3>
-        <p class="card-stack">Python &middot; Pandas &middot; Scikit-learn</p>
-        <p>Logistic Regression and Random Forest on an 8,000-record loan dataset,
-           with class imbalance handled using balanced class weights. EDA identified
-           debt-to-income, income, and interest rate as the strongest default drivers.</p>
-        <ul class="fact-list">
-          <li>Evaluated on recall and ROC-AUC: <strong>recall 0.74</strong>, <strong>AUC 0.83</strong></li>
-          <li>Highest DTI band defaults at <strong>41.6%</strong> vs <strong>3.3%</strong> for the lowest</li>
-          <li>Stakeholder report with underwriting recommendations</li>
-        </ul>
-      </div>
-      <figure class="card-chart" id="dti-figure">
-        <figcaption>Default rate by debt-to-income band</figcaption>
-        <svg id="dti-chart" viewBox="0 0 360 144" role="img"
-             aria-label="Bar chart: 3.3% of loans default in the lowest DTI band versus 41.6% in the highest">
-          <text class="row-label" x="8" y="20">lowest DTI band</text>
-          <rect class="bar" x="8" y="28" width="20" height="24" rx="3">
-            <title>Lowest DTI band: 3.3% default rate</title>
-          </rect>
-          <text class="bar-value" x="36" y="45">3.3%</text>
+  <!-- 1. Credit risk: full-width report tile with the hero chart -->
+  <article class="tile tile-wide" data-skills="python pandas sklearn viz jupyter eda git">
+    <div class="tile-text">
+      <h3>Credit Risk / Loan Default Prediction</h3>
+      <p class="stack">Python &middot; Pandas &middot; Scikit-learn</p>
+      <p>Logistic Regression and Random Forest on an 8,000-record loan dataset,
+         with class imbalance handled using balanced class weights. EDA identified
+         debt-to-income, income, and interest rate as the strongest default
+         drivers.</p>
+      <ul class="facts">
+        <li>Evaluated on recall and ROC-AUC: <strong>recall 0.74</strong>, <strong>AUC 0.83</strong></li>
+        <li>Highest DTI band defaults at <strong>41.6%</strong> vs <strong>3.3%</strong> for the lowest</li>
+        <li>Stakeholder report with underwriting recommendations</li>
+      </ul>
+    </div>
+    <figure class="chart">
+      <figcaption>Default rate by debt-to-income band</figcaption>
+      <svg id="dti-chart" viewBox="0 0 520 300" role="img"
+           aria-label="Bar chart of default rate by debt-to-income band: 3.3%, 6.9%, 12.5%, 20.6%, then 41.6% in the highest band">
+        <!-- y gridlines: 0–40% at 4.8px per point, baseline y=252 -->
+        <g class="grid">
+          <line x1="44" y1="60"  x2="512" y2="60"/>
+          <line x1="44" y1="108" x2="512" y2="108"/>
+          <line x1="44" y1="156" x2="512" y2="156"/>
+          <line x1="44" y1="204" x2="512" y2="204"/>
+        </g>
+        <line class="baseline" x1="44" y1="252" x2="512" y2="252"/>
+        <g class="y-labels">
+          <text x="36" y="256">0%</text>
+          <text x="36" y="208">10%</text>
+          <text x="36" y="160">20%</text>
+          <text x="36" y="112">30%</text>
+          <text x="36" y="64">40%</text>
+        </g>
+        <!-- bars: 3.3 / 6.9 / 12.5 / 20.6 / 41.6 -->
+        <g class="bars">
+          <path d="M63 252 L63 240 Q63 236 67 236 L115 236 Q119 236 119 240 L119 252 Z">
+            <title>0–20% band: 3.3% default rate (2,301 loans)</title>
+          </path>
+          <path d="M156 252 L156 223 Q156 219 160 219 L208 219 Q212 219 212 223 L212 252 Z">
+            <title>20–40% band: 6.9% default rate (2,252 loans)</title>
+          </path>
+          <path d="M250 252 L250 196 Q250 192 254 192 L302 192 Q306 192 306 196 L306 252 Z">
+            <title>40–60% band: 12.5% default rate (1,515 loans)</title>
+          </path>
+          <path d="M344 252 L344 157 Q344 153 348 153 L396 153 Q400 153 400 157 L400 252 Z">
+            <title>60–80% band: 20.6% default rate (996 loans)</title>
+          </path>
+          <path class="bar-risk" d="M437 252 L437 56 Q437 52 441 52 L489 52 Q493 52 493 56 L493 252 Z">
+            <title>&gt;80% band: 41.6% default rate (929 loans)</title>
+          </path>
+        </g>
+        <g class="bar-values">
+          <text x="91"  y="228">3.3%</text>
+          <text x="184" y="211">6.9%</text>
+          <text x="278" y="184">12.5%</text>
+          <text x="372" y="145">20.6%</text>
+          <text x="465" y="44" class="value-risk">41.6%</text>
+        </g>
+        <g class="x-labels">
+          <text x="91"  y="272">0&ndash;20%</text>
+          <text x="184" y="272">20&ndash;40%</text>
+          <text x="278" y="272">40&ndash;60%</text>
+          <text x="372" y="272">60&ndash;80%</text>
+          <text x="465" y="272">&gt;80%</text>
+        </g>
+        <text class="axis-title" x="278" y="294">loan &divide; annual income band</text>
+      </svg>
+      <p class="chart-source">computed from the project&rsquo;s 8,000-record loan dataset</p>
+    </figure>
+  </article>
 
-          <text class="row-label" x="8" y="78">highest DTI band</text>
-          <rect class="bar bar-hot" x="8" y="86" width="250" height="24" rx="3">
-            <title>Highest DTI band: 41.6% default rate</title>
-          </rect>
-          <text class="bar-value bar-value-hot" x="266" y="103">41.6%</text>
-
-          <text class="annotation" x="8" y="136">&asymp; 12.6&times; the default risk</text>
-        </svg>
-      </figure>
+  <!-- 2–4: smaller report tiles -->
+  <div class="tile-grid">
+    <article class="tile" data-skills="python sql etl schema git">
+      <h3>Student Grade Management System</h3>
+      <p class="stack">Python &middot; SQLite &middot; CSV</p>
+      <p>Normalized SQLite schema for 100+ student records with integrity
+         constraints, fed by a full ETL pipeline &mdash; raw CSV in, validated and
+         transformed with exception handling, clean tables out &mdash; plus
+         automated CSV report export.</p>
+      <p class="tile-stat"><span class="mono">100+</span> records &middot;
+         <span class="mono">Extract &rarr; Validate &rarr; Transform &rarr; Load</span></p>
     </article>
 
-    <div class="card-row">
-      <!-- 2. Grade Management -->
-      <article class="card">
-        <h3>Student Grade Management System</h3>
-        <p class="card-stack">Python &middot; SQLite &middot; CSV</p>
-        <p>Normalized SQLite schema for 100+ student records with integrity
-           constraints, fed by a full ETL pipeline &mdash; raw CSV in, validated and
-           transformed with exception handling, clean tables out &mdash; plus
-           automated CSV report export.</p>
-        <div class="etl-flow" aria-label="ETL pipeline: extract, validate, transform, load">
-          <span class="etl-step">Extract</span><span class="etl-arrow">&rarr;</span>
-          <span class="etl-step">Validate</span><span class="etl-arrow">&rarr;</span>
-          <span class="etl-step">Transform</span><span class="etl-arrow">&rarr;</span>
-          <span class="etl-step">Load</span>
-        </div>
-      </article>
+    <article class="tile" data-skills="python mongodb flask rest git">
+      <h3>Smart Course Planner Web App</h3>
+      <p class="stack">Python &middot; Flask &middot; MongoDB</p>
+      <p>NoSQL data model for prerequisites across a 50+ course catalog.
+         Topological sort validates dependency graphs and blocks invalid
+         schedules, exposed through 5+ RESTful Flask API endpoints.</p>
+      <p class="tile-stat"><span class="mono">50+</span> courses &middot;
+         <span class="mono">5+</span> REST endpoints</p>
+    </article>
 
-      <!-- 3. Course Planner -->
-      <article class="card">
-        <h3>Smart Course Planner Web App</h3>
-        <p class="card-stack">Python &middot; Flask &middot; MongoDB</p>
-        <p>NoSQL data model for prerequisites across a 50+ course catalog.
-           Topological sort validates dependency graphs and blocks invalid
-           schedules, exposed through 5+ RESTful Flask API endpoints.</p>
-        <figure class="dag" aria-hidden="true">
-          <svg viewBox="0 0 300 74">
-            <g class="dag-edges">
-              <line x1="52" y1="37" x2="88"  y2="37"/>
-              <line x1="132" y1="30" x2="168" y2="18"/>
-              <line x1="132" y1="44" x2="168" y2="56"/>
-              <line x1="212" y1="18" x2="248" y2="32"/>
-              <line x1="212" y1="56" x2="248" y2="42"/>
-            </g>
-            <g class="dag-nodes">
-              <rect x="8"   y="25" width="44" height="24" rx="12"/><text x="30"  y="41">101</text>
-              <rect x="88"  y="25" width="44" height="24" rx="12"/><text x="110" y="41">201</text>
-              <rect x="168" y="6"  width="44" height="24" rx="12"/><text x="190" y="22">301</text>
-              <rect x="168" y="44" width="44" height="24" rx="12"/><text x="190" y="60">302</text>
-              <rect x="248" y="25" width="44" height="24" rx="12"/><text x="270" y="41">401</text>
-            </g>
-          </svg>
-          <figcaption>prerequisite graph &mdash; resolved by topological sort</figcaption>
-        </figure>
-      </article>
-
-      <!-- 4. Movie Search -->
-      <article class="card">
-        <h3>Movie Search &amp; Analytics App</h3>
-        <p class="card-stack">JavaScript &middot; TMDB API &middot; REST</p>
-        <p>TMDB REST API integration over a 500,000+ movie catalog with search,
-           filter, and aggregation features. Non-blocking fetching with
-           async/await and graceful error handling.</p>
-        <div class="movie-demo">
-          <label for="movie-search" class="demo-label">live demo &mdash; filters a 12-movie sample, same logic as the app</label>
-          <input type="search" id="movie-search" placeholder="Try &quot;inter&quot; or &quot;2019&quot;&hellip;" autocomplete="off">
-          <p class="demo-count" id="movie-count">12 of 12 movies</p>
-          <ul class="movie-list" id="movie-list"></ul>
-        </div>
-      </article>
-
-      <!-- filler card keeps the 2-col grid balanced on desktop -->
-      <article class="card card-ghost" aria-hidden="true">
-        <p class="ghost-note">SELECT next_project FROM ideas ORDER BY impact DESC LIMIT 1;</p>
-      </article>
-    </div>
+    <article class="tile" data-skills="javascript rest git">
+      <h3>Movie Search &amp; Analytics App</h3>
+      <p class="stack">JavaScript &middot; TMDB API &middot; REST</p>
+      <p>TMDB REST API integration over a 500,000+ movie catalog with search,
+         filter, and aggregation features. Non-blocking fetching with
+         async/await and graceful error handling.</p>
+      <p class="tile-stat"><span class="mono">500K+</span> movie catalog &middot;
+         <span class="mono">async/await</span> fetching</p>
+    </article>
   </div>
 </section>
 
-<!-- ============ SKILLS ============ -->
-<section class="section" id="skills">
-  <div class="wrap">
-    <h2><span class="h2-index">02</span> Skills</h2>
-    <dl class="skill-groups">
-      <div class="skill-group">
-        <dt>Languages</dt>
-        <dd><span>Python</span><span>SQL</span><span>JavaScript</span><span>C</span></dd>
-      </div>
-      <div class="skill-group">
-        <dt>Data &amp; Analytics</dt>
-        <dd><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span><span>Scikit-learn</span><span>Jupyter</span><span>EDA</span><span>feature engineering</span><span>statistical modeling</span></dd>
-      </div>
-      <div class="skill-group">
-        <dt>Data Engineering</dt>
-        <dd><span>ETL pipelines</span><span>web scraping (Requests, BeautifulSoup)</span><span>data cleaning &amp; validation</span><span>regex</span></dd>
-      </div>
-      <div class="skill-group">
-        <dt>Databases</dt>
-        <dd><span>SQLite</span><span>MongoDB</span><span>SQLAlchemy</span><span>schema design</span><span>normalization</span></dd>
-      </div>
-      <div class="skill-group">
-        <dt>BI &amp; Visualization</dt>
-        <dd><span>Power BI (DAX, dashboard design)</span><span>Matplotlib</span><span>Seaborn</span></dd>
-      </div>
-      <div class="skill-group">
-        <dt>Frameworks &amp; APIs</dt>
-        <dd><span>Flask</span><span>REST API design &amp; integration</span><span>JSON</span></dd>
-      </div>
-      <div class="skill-group">
-        <dt>Tools &amp; Workflow</dt>
-        <dd><span>Git</span><span>GitHub</span><span>VS Code</span><span>Linux</span><span>AI-assisted development (Claude Code)</span></dd>
-      </div>
-    </dl>
+<!-- ============ SKILLS MATRIX ============ -->
+<section id="skills" aria-label="Skills">
+  <div class="section-head">
+    <h2>Skills</h2>
+    <p class="hint">click a skill to filter the projects above &mdash; like a slicer</p>
+  </div>
+
+  <div class="tile matrix-tile">
+    <div class="matrix-scroll">
+      <table class="matrix">
+        <thead>
+          <tr>
+            <th scope="col" class="col-skill">skill</th>
+            <th scope="col" title="Credit Risk / Loan Default Prediction">CR</th>
+            <th scope="col" title="Student Grade Management System">GM</th>
+            <th scope="col" title="Smart Course Planner Web App">CP</th>
+            <th scope="col" title="Movie Search &amp; Analytics App">MV</th>
+            <th scope="col" class="col-note"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="group"><th scope="rowgroup" colspan="6">Languages</th></tr>
+          <tr data-skill="python"><td>Python</td><td class="on"></td><td class="on"></td><td class="on"></td><td></td><td></td></tr>
+          <tr data-skill="sql"><td>SQL</td><td></td><td class="on"></td><td></td><td></td><td></td></tr>
+          <tr data-skill="javascript"><td>JavaScript</td><td></td><td></td><td></td><td class="on"></td><td></td></tr>
+          <tr><td>C</td><td></td><td></td><td></td><td></td><td class="note">coursework</td></tr>
+
+          <tr class="group"><th scope="rowgroup" colspan="6">Data &amp; Analytics</th></tr>
+          <tr data-skill="pandas"><td>Pandas &middot; NumPy</td><td class="on"></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-skill="sklearn"><td>Scikit-learn</td><td class="on"></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-skill="viz"><td>Matplotlib &middot; Seaborn</td><td class="on"></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-skill="jupyter"><td>Jupyter</td><td class="on"></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-skill="eda"><td>EDA &amp; feature engineering</td><td class="on"></td><td></td><td></td><td></td><td></td></tr>
+
+          <tr class="group"><th scope="rowgroup" colspan="6">Data Engineering</th></tr>
+          <tr data-skill="etl"><td>ETL &amp; data validation</td><td></td><td class="on"></td><td></td><td></td><td></td></tr>
+          <tr><td>Web scraping (Requests, BeautifulSoup)</td><td></td><td></td><td></td><td></td><td class="note">practice</td></tr>
+          <tr><td>Regex</td><td></td><td></td><td></td><td></td><td class="note">practice</td></tr>
+
+          <tr class="group"><th scope="rowgroup" colspan="6">Databases</th></tr>
+          <tr data-skill="schema"><td>SQLite &middot; schema design &middot; normalization</td><td></td><td class="on"></td><td></td><td></td><td></td></tr>
+          <tr data-skill="mongodb"><td>MongoDB</td><td></td><td></td><td class="on"></td><td></td><td></td></tr>
+          <tr><td>SQLAlchemy</td><td></td><td></td><td></td><td></td><td class="note">practice</td></tr>
+
+          <tr class="group"><th scope="rowgroup" colspan="6">BI &amp; Visualization</th></tr>
+          <tr><td>Power BI (DAX, dashboard design)</td><td></td><td></td><td></td><td></td><td class="note note-progress">in progress</td></tr>
+
+          <tr class="group"><th scope="rowgroup" colspan="6">Frameworks &amp; APIs</th></tr>
+          <tr data-skill="flask"><td>Flask</td><td></td><td></td><td class="on"></td><td></td><td></td></tr>
+          <tr data-skill="rest"><td>REST APIs &amp; JSON</td><td></td><td></td><td class="on"></td><td class="on"></td><td></td></tr>
+
+          <tr class="group"><th scope="rowgroup" colspan="6">Tools &amp; Workflow</th></tr>
+          <tr data-skill="git"><td>Git &amp; GitHub</td><td class="on"></td><td class="on"></td><td class="on"></td><td class="on"></td><td></td></tr>
+          <tr><td>VS Code &middot; Linux &middot; AI-assisted development (Claude Code)</td><td></td><td></td><td></td><td></td><td class="note">daily workflow</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="matrix-legend">
+      <span class="dot-demo"></span> used in project &middot;
+      CR credit risk &middot; GM grade management &middot; CP course planner &middot; MV movie app
+    </p>
   </div>
 </section>
 
 <!-- ============ EDUCATION ============ -->
-<section class="section" id="education">
-  <div class="wrap">
-    <h2><span class="h2-index">03</span> Education</h2>
-    <div class="edu-card">
-      <div>
-        <h3>B.S. Computer Science</h3>
-        <p class="edu-school">New Jersey City University</p>
-      </div>
-      <div class="edu-facts">
-        <span class="edu-fact">May 2026</span>
-        <span class="edu-fact">GPA 3.2</span>
-      </div>
+<section id="education" aria-label="Education">
+  <h2>Education</h2>
+  <div class="tile edu-tile">
+    <div>
+      <h3>B.S. Computer Science</h3>
+      <p class="edu-school">New Jersey City University</p>
     </div>
+    <p class="edu-facts"><span class="mono">May 2026</span><span class="mono">GPA 3.2</span></p>
   </div>
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section class="section" id="contact">
-  <div class="wrap">
-    <h2><span class="h2-index">04</span> Contact</h2>
-    <p class="contact-line">Open to entry-level Data Analyst / Data Scientist roles.
-       Based in Jersey City, NJ.</p>
-    <div class="contact-links">
-      <a href="mailto:prince16mayani@gmail.com" class="btn btn-solid">prince16mayani@gmail.com</a>
-      <a href="https://linkedin.com/in/princemayani" class="btn">LinkedIn &nearr;</a>
-      <a href="https://github.com/princemayani" class="btn">GitHub &nearr;</a>
-      <a href="PrinceMayani_Resume.pdf" download class="btn">Resume (PDF) &darr;</a>
-    </div>
+<section id="contact" aria-label="Contact">
+  <h2>Contact</h2>
+  <p class="contact-line">Open to entry-level Data Analyst / Data Scientist roles.
+     Based in Jersey City, NJ.</p>
+  <div class="contact-links">
+    <a href="mailto:prince16mayani@gmail.com" class="btn btn-solid">prince16mayani@gmail.com</a>
+    <a href="https://linkedin.com/in/princemayani" class="btn">LinkedIn &nearr;</a>
+    <a href="https://github.com/princemayani" class="btn">GitHub &nearr;</a>
+    <a href="PrinceMayani_Resume.pdf" download class="btn">Resume (PDF) &darr;</a>
   </div>
 </section>
+
 </main>
 
 <footer>
   <div class="wrap">
     <p>Prince Mayani &middot; plain HTML/CSS/JS, no framework &middot;
+       chart values computed from the real project dataset &middot;
        <a href="https://github.com/princemayani">github.com/princemayani</a></p>
   </div>
 </footer>
