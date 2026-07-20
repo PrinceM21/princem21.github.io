@@ -377,6 +377,24 @@ section > h2 { margin-bottom: 16px; }
   background: var(--canvas);
 }
 
+.cert-tile { margin-top: 14px; }
+.cert-tile h3 { font-size: 0.95rem; margin-bottom: 8px; }
+
+.cert-list { list-style: none; }
+
+.cert-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(222, 226, 230, 0.55);
+}
+
+.cert-list li:last-child { border-bottom: none; }
+.cert-list .mono { color: var(--navy); font-size: 0.8rem; white-space: nowrap; }
+
 /* ---------- contact ---------- */
 
 .contact-line { color: var(--ink-dim); margin-bottom: 18px; max-width: 36em; }

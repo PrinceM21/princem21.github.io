@@ -67,10 +67,10 @@
   </div>
 
   <!-- 1. Credit risk: full-width report tile with the hero chart -->
-  <article class="tile tile-wide" data-skills="python pandas sklearn viz jupyter eda git">
+  <article class="tile tile-wide" data-skills="sql python pandas sklearn viz jupyter eda classification reporting git">
     <div class="tile-text">
       <h3>Credit Risk / Loan Default Prediction</h3>
-      <p class="stack">Python &middot; Pandas &middot; Scikit-learn</p>
+      <p class="stack">Python &middot; SQL &middot; Pandas &middot; Scikit-learn</p>
       <p>Logistic Regression and Random Forest on an 8,000-record loan dataset,
          with class imbalance handled using balanced class weights. EDA identified
          debt-to-income, income, and interest rate as the strongest default
@@ -140,23 +140,23 @@
 
   <!-- 2–4: smaller report tiles -->
   <div class="tile-grid">
-    <article class="tile" data-skills="python sql etl schema git">
+    <article class="tile" data-skills="python sql sqlite etl git">
       <h3>Student Grade Management System</h3>
       <p class="stack">Python &middot; SQLite &middot; CSV</p>
-      <p>Normalized SQLite schema for 100+ student records with integrity
-         constraints, fed by a full ETL pipeline &mdash; raw CSV in, validated and
-         transformed with exception handling, clean tables out &mdash; plus
-         automated CSV report export.</p>
-      <p class="tile-stat"><span class="mono">100+</span> records &middot;
-         <span class="mono">Extract &rarr; Validate &rarr; Transform &rarr; Load</span></p>
+      <p>Normalized SQLite schema with data-integrity constraints, fed by a full
+         ETL pipeline that extracts, validates, and transforms CSV records into
+         structured tables. Automated report export cut a repetitive manual task
+         down to a single command.</p>
+      <p class="tile-stat"><span class="mono">Extract &rarr; Validate &rarr; Transform &rarr; Load</span> &middot;
+         <span class="mono">1-command</span> reports</p>
     </article>
 
     <article class="tile" data-skills="python mongodb flask rest git">
       <h3>Smart Course Planner Web App</h3>
       <p class="stack">Python &middot; Flask &middot; MongoDB</p>
-      <p>NoSQL data model for prerequisites across a 50+ course catalog.
-         Topological sort validates dependency graphs and blocks invalid
-         schedules, exposed through 5+ RESTful Flask API endpoints.</p>
+      <p>NoSQL data model in MongoDB for prerequisites across a 50+ course
+         catalog, with topological sorting to validate dependency graphs.
+         5+ RESTful Flask API endpoints serve structured data to the frontend.</p>
       <p class="tile-stat"><span class="mono">50+</span> courses &middot;
          <span class="mono">5+</span> REST endpoints</p>
     </article>
@@ -164,11 +164,11 @@
     <article class="tile" data-skills="javascript rest git">
       <h3>Movie Search &amp; Analytics App</h3>
       <p class="stack">JavaScript &middot; TMDB API &middot; REST</p>
-      <p>TMDB REST API integration over a 500,000+ movie catalog with search,
-         filter, and aggregation features. Non-blocking fetching with
-         async/await and graceful error handling.</p>
-      <p class="tile-stat"><span class="mono">500K+</span> movie catalog &middot;
-         <span class="mono">async/await</span> fetching</p>
+      <p>TMDB REST API integration that ingests, parses, and transforms JSON
+         from a catalog of 500,000+ records, with search, filter, and
+         aggregation over large datasets.</p>
+      <p class="tile-stat"><span class="mono">500K+</span> record catalog &middot;
+         <span class="mono">JSON</span> ingest &amp; transform</p>
     </article>
   </div>
 </section>
@@ -194,9 +194,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="group"><th scope="rowgroup" colspan="6">Languages</th></tr>
+          <tr class="group"><th scope="rowgroup" colspan="6">Languages &amp; Querying</th></tr>
+          <tr data-skill="sql"><td>SQL</td><td class="on"></td><td class="on"></td><td></td><td></td><td></td></tr>
           <tr data-skill="python"><td>Python</td><td class="on"></td><td class="on"></td><td class="on"></td><td></td><td></td></tr>
-          <tr data-skill="sql"><td>SQL</td><td></td><td class="on"></td><td></td><td></td><td></td></tr>
           <tr data-skill="javascript"><td>JavaScript</td><td></td><td></td><td></td><td class="on"></td><td></td></tr>
           <tr><td>C</td><td></td><td></td><td></td><td></td><td class="note">coursework</td></tr>
 
@@ -204,29 +204,28 @@
           <tr data-skill="pandas"><td>Pandas &middot; NumPy</td><td class="on"></td><td></td><td></td><td></td><td></td></tr>
           <tr data-skill="sklearn"><td>Scikit-learn</td><td class="on"></td><td></td><td></td><td></td><td></td></tr>
           <tr data-skill="viz"><td>Matplotlib &middot; Seaborn</td><td class="on"></td><td></td><td></td><td></td><td></td></tr>
-          <tr data-skill="jupyter"><td>Jupyter</td><td class="on"></td><td></td><td></td><td></td><td></td></tr>
-          <tr data-skill="eda"><td>EDA &amp; feature engineering</td><td class="on"></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-skill="jupyter"><td>Jupyter Notebook</td><td class="on"></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Excel</td><td></td><td></td><td></td><td></td><td class="note">coursework</td></tr>
 
-          <tr class="group"><th scope="rowgroup" colspan="6">Data Engineering</th></tr>
-          <tr data-skill="etl"><td>ETL &amp; data validation</td><td></td><td class="on"></td><td></td><td></td><td></td></tr>
-          <tr><td>Web scraping (Requests, BeautifulSoup)</td><td></td><td></td><td></td><td></td><td class="note">practice</td></tr>
-          <tr><td>Regex</td><td></td><td></td><td></td><td></td><td class="note">practice</td></tr>
+          <tr class="group"><th scope="rowgroup" colspan="6">Statistics &amp; Modeling</th></tr>
+          <tr data-skill="eda"><td>Exploratory data analysis &amp; feature engineering</td><td class="on"></td><td></td><td></td><td></td><td></td></tr>
+          <tr data-skill="classification"><td>Classification &amp; model evaluation</td><td class="on"></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Hypothesis testing &amp; statistical modeling</td><td></td><td></td><td></td><td></td><td class="note">coursework</td></tr>
 
-          <tr class="group"><th scope="rowgroup" colspan="6">Databases</th></tr>
-          <tr data-skill="schema"><td>SQLite &middot; schema design &middot; normalization</td><td></td><td class="on"></td><td></td><td></td><td></td></tr>
+          <tr class="group"><th scope="rowgroup" colspan="6">Databases &amp; ETL</th></tr>
+          <tr data-skill="sqlite"><td>SQLite &middot; schema design</td><td></td><td class="on"></td><td></td><td></td><td></td></tr>
           <tr data-skill="mongodb"><td>MongoDB</td><td></td><td></td><td class="on"></td><td></td><td></td></tr>
-          <tr><td>SQLAlchemy</td><td></td><td></td><td></td><td></td><td class="note">practice</td></tr>
+          <tr data-skill="etl"><td>ETL pipelines &middot; data cleaning &amp; validation</td><td></td><td class="on"></td><td></td><td></td><td></td></tr>
 
-          <tr class="group"><th scope="rowgroup" colspan="6">BI &amp; Visualization</th></tr>
-          <tr><td>Power BI (DAX, dashboard design)</td><td></td><td></td><td></td><td></td><td class="note note-progress">in progress</td></tr>
+          <tr class="group"><th scope="rowgroup" colspan="6">Reporting &amp; Visualization</th></tr>
+          <tr data-skill="reporting"><td>Dashboards &middot; stakeholder reports &middot; data storytelling</td><td class="on"></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Power BI</td><td></td><td></td><td></td><td></td><td class="note note-progress">in progress</td></tr>
 
-          <tr class="group"><th scope="rowgroup" colspan="6">Frameworks &amp; APIs</th></tr>
+          <tr class="group"><th scope="rowgroup" colspan="6">Tools</th></tr>
+          <tr data-skill="git"><td>Git &amp; GitHub</td><td class="on"></td><td class="on"></td><td class="on"></td><td class="on"></td><td></td></tr>
           <tr data-skill="flask"><td>Flask</td><td></td><td></td><td class="on"></td><td></td><td></td></tr>
           <tr data-skill="rest"><td>REST APIs &amp; JSON</td><td></td><td></td><td class="on"></td><td class="on"></td><td></td></tr>
-
-          <tr class="group"><th scope="rowgroup" colspan="6">Tools &amp; Workflow</th></tr>
-          <tr data-skill="git"><td>Git &amp; GitHub</td><td class="on"></td><td class="on"></td><td class="on"></td><td class="on"></td><td></td></tr>
-          <tr><td>VS Code &middot; Linux &middot; AI-assisted development (Claude Code)</td><td></td><td></td><td></td><td></td><td class="note">daily workflow</td></tr>
+          <tr><td>VS Code &middot; Linux</td><td></td><td></td><td></td><td></td><td class="note">daily workflow</td></tr>
         </tbody>
       </table>
     </div>
@@ -245,7 +244,15 @@
       <h3>B.S. Computer Science</h3>
       <p class="edu-school">New Jersey City University</p>
     </div>
-    <p class="edu-facts"><span class="mono">May 2026</span><span class="mono">GPA 3.2</span></p>
+    <p class="edu-facts"><span class="mono">May 2026</span><span class="mono">GPA 3.17</span></p>
+  </div>
+  <div class="tile cert-tile">
+    <h3>Certifications</h3>
+    <ul class="cert-list">
+      <li>Bloomberg Market Concepts (BMC), Bloomberg for Education <span class="mono">2026</span></li>
+      <li>The Ultimate Job Ready Data Science Course, CodeWithHarry <span class="mono">2026</span></li>
+      <li>Data Structures &amp; Algorithms, Apna College <span class="mono">2023</span></li>
+    </ul>
   </div>
 </section>
 
